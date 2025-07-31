@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nos Services - VALA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #000000; /* Noir pur pour texte */
+      --secondary: #FFFFFF; /* Blanc */
+      --accent: #08FF88; /* Vert */
+      --background: #FFFFFF; /* Fond blanc pour la page */
+      --text: #333333; /* Texte principal */
+      --dark-bg: #111111; /* Fond noir pour sections */
+      --nav-text: #000000; /* Noir pur pour navigation */
+      --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      background-color: var(--secondary);
+      box-shadow: var(--card-shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 1.2;
+      color: var(--primary);
+    }
+
+    .logo span {
+      display: block;
+      font-size: 14px;
+      font-weight: normal;
+      color: #666;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--nav-text);
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--accent);
+    }
+
+    /* Hero section */
+    .hero-wrapper {
+      background-image: url('sevice.JPEG');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      color: var(--secondary);
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    /* Services grid */
+    .services-container {
+      padding: 80px 5%;
+      background-color: var(--background);
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .services-header h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .services-header p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--secondary);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      border: 1px solid #eee;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .service-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .service-content {
+      padding: 25px;
+    }
+
+    .service-content h3 {
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .service-content p {
+      color: var(--text);
+      margin-bottom: 0;
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      display: inline-block;
+      color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-bg);
+      color: var(--secondary);
+      padding: 40px 5%;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      
+      .services-header h2 {
+        font-size: 2rem;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .logout-btn {
+    margin-left: 20px;
+    padding: 8px 16px;
+    background-color: var(--accent);
+    color: var(--primary);
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #06d673;
+    transform: translateY(-2px);
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      VALA
+      <span>Creative Internet Solutions</span>
+    </div>
+    <nav>
+      <a href="accueil.php">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="projets.php">Projets</a>
+      <a href="stagiaires.php">Stagiaires</a>
+      <a href="support.php">Support interne</a>
+      <a href="logout.php" class="logout-btn">Déconnexion</a>
+    </nav>
+  </header>
+
+  <div class="hero-wrapper">
+    <div class="hero-content">
+      <h1>Nos Services Professionnels</h1>
+      <p>Des solutions sur mesure pour propulser votre présence digitale</p>
+    </div>
+  </div>
+
+  <div class="services-container">
+    <div class="services-header">
+      <h2>Découvrez notre expertise</h2>
+      <p>Nous combinons créativité et technologie pour offrir des solutions digitales qui transforment votre business.</p>
+    </div>
+    
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card">
+        <div class="service-image" style="background-image: url('Création site.JPEG');"></div>
+        <div class="service-content">
+          <span class="service-icon">🖥️</span>
+          <h3>Création de site vitrine</h3>
+          <p>Des sites web élégants qui représentent parfaitement votre marque et attirent vos clients.</p>
+        </div>
+      </div>
+      
+      <!-- Service 2 -->
+      <div class="service-card">
+        <div class="service-image" style="background-image: url('site ecommerce.JPEG');"></div>
+        <div class="service-content">
+          <span class="service-icon">🛒</span>
+          <h3>Création de site e-commerce</h3>
+          <p>Plateformes de vente en ligne optimisées pour maximiser vos conversions.</p>
+        </div>
+      </div>
+      
+      <!-- Service 3 -->
+      <div class="service-card">
+        <div class="service-image" style="background-image: url('Refonte de site existant.JPEG');"></div>
+        <div class="service-content">
+          <span class="service-icon">🔄</span>
+          <h3>Refonte de site existant</h3>
+          <p>Modernisation de votre site web pour améliorer l'expérience utilisateur et les performances.</p>
+        </div>
+      </div>
+      
+      <!-- Service 4 -->
+      <div class="service-card">
+        <div class="service-image" style="background-image: url('Responsive design (mobile + tablette).JPEG');"></div>
+        <div class="service-content">
+          <span class="service-icon">📱</span>
+          <h3>Responsive design</h3>
+          <p>Sites parfaitement adaptés à tous les appareils (mobile, tablette, desktop).</p>
+        </div>
+      </div>
+      
+      <!-- Service 5 -->
+      <div class="service-card">
+        <div class="service-image" style="background-image: url('Intégration IA.JPEG');"></div>
+        <div class="service-content">
+          <span class="service-icon">🧠</span>
+          <h3>Intégration IA</h3>
+          <p>Solutions intelligentes pour automatiser et personnaliser l'expérience utilisateur.</p>
+        </div>
+      </div>
+      
+      <!-- Service 6 -->
+      <div class="service-card">
+        <div class="service-image" style="background-image: url('Référencement SEO.JPEG');"></div>
+        <div class="service-content">
+          <span class="service-icon">📈</span>
+          <h3>Référencement SEO</h3>
+          <p>Optimisation pour les moteurs de recherche pour augmenter votre visibilité.</p>
+        </div>
+      </div>
+      
+      <!-- Service 7 -->
+      <div class="service-card">
+        <div class="service-image" style="background-image: url('Design sur mesure.JPEG');"></div>
+        <div class="service-content">
+          <span class="service-icon">🎨</span>
+          <h3>Design sur mesure</h3>
+          <p>Interfaces uniques et mémorables qui reflètent votre identité de marque.</p>
+        </div>
+      </div>
+      
+      <!-- Service 8 -->
+      <div class="service-card">
+        <div class="service-image" style="background-image: url('Maintenance technique.JPEG');"></div>
+        <div class="service-content">
+          <span class="service-icon">🔧</span>
+          <h3>Maintenance technique</h3>
+          <p>Support continu pour garder votre site sécurisé et à jour.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2023 VALA - Creative Internet Solutions. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
